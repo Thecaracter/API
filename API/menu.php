@@ -7,9 +7,9 @@ include "../koneksi.php";
 if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
-$id = $_POST['id'];
+$id = $_POST['id_kantin'];
 // Query untuk menampilkan data
-$sql = "SELECT * FROM menus WHERE id_kantin = 1;";
+$sql = "SELECT * FROM menus WHERE id_kantin = $id;";
 $result = mysqli_query($conn, $sql);
 
 // membuat array kosong untuk menampung data
